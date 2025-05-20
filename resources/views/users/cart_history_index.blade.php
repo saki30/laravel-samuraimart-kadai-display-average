@@ -4,6 +4,7 @@
 <div class="container pt-2">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            {{-- パンくずリスト --}}
             <nav class="mb-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('mypage') }}">マイページ</a></li>
@@ -11,6 +12,7 @@
                 </ol>
             </nav>
 
+            {{-- 件数付きタイトル --}}
             <h1 class="mb-4">注文履歴 {{ number_format($billings->total()) }}件</h1>
 
             <table class="table mb-4">
@@ -26,11 +28,11 @@
                     @foreach($billings as $billing)
                         <tr>
                             <td>{{ $billing['code'] }}</td>
-                            <td>{{ $billing['created_at']}}</td>
+                            <td>{{ $billing['created_at'] }}</td>
                             <td>￥{{ number_format($billing['total']) }}</td>
                             <td>
                                 <a href="{{ route('mypage.cart_history_show', $billing['id']) }}">
-                                    詳細
+                                    詳細を確認する
                                 </a>
                             </td>
                         </tr>
@@ -38,9 +40,9 @@
                 </tbody>
             </table>
 
+            {{-- ページネーション --}}
             {{ $billings->links() }}
         </div>
     </div>
 </div>
-
 @endsection

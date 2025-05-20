@@ -16,8 +16,8 @@
             <hr class="mb-4">
 
             <form method="post" action="{{ route('mypage.update_password') }}">
-                {{ csrf_field() }}
-                <input type="hidden" name="_method" value="PUT">
+                @csrf
+                @method('PUT')
 
                 <div class="form-group row mb-3">
                     <label for="password" class="col-md-5 col-form-label text-md-left fw-medium">新しいパスワード</label>

@@ -19,39 +19,23 @@
             <hr class="mb-3">
 
             <div class="row mb-2">
-                <div class="col-5">
-                    注文番号
-                </div>
-                <div class="col-7">
-                    {{ $cart_info->code }}
-                </div>
+                <div class="col-5">注文番号</div>
+                <div class="col-7">{{ $cart_info->code }}</div>
             </div>
 
             <div class="row mb-2">
-                <div class="col-5">
-                    注文日時
-                </div>
-                <div class="col-7">
-                    {{ $cart_info->updated_at }}
-                </div>
+                <div class="col-5">注文日時</div>
+                <div class="col-7">{{ $cart_info->updated_at }}</div>
             </div>
 
             <div class="row mb-2">
-                <div class="col-5">
-                    合計金額
-                </div>
-                <div class="col-7">
-                    {{ number_format($cart_info->price_total) }}円
-                </div>
+                <div class="col-5">合計金額</div>
+                <div class="col-7">{{ number_format($cart_info->price_total) }}円</div>
             </div>
 
             <div class="row mb-5">
-                <div class="col-5">
-                    合計数量
-                </div>
-                <div class="col-7">
-                    {{ number_format($cart_info->qty) }}
-                </div>
+                <div class="col-5">合計数量</div>
+                <div class="col-7">{{ number_format($cart_info->qty) }}</div>
             </div>
 
             <h5 class="fw-bold">商品詳細</h5>
@@ -71,29 +55,17 @@
                     </div>
                     <div class="col-md-7">
                         <div class="flex-column">
-                            <p>{{$product->name}}</p>
+                            <p class="fw-bold">{{ $product->name }}</p>
                             <div class="row mb-2">
-                                <div class="col-2">
-                                    数量
-                                </div>
-                                <div class="col-10">
-                                    {{ number_format($product->qty) }}
-                                </div>
+                                <div class="col-2">数量</div>
+                                <div class="col-10">{{ number_format($product->qty) }}</div>
                             </div>
-
                             <div class="row mb-2">
-                                <div class="col-2">
-                                    小計
-                                </div>
-                                <div class="col-10">
-                                    ￥{{ number_format($product->qty * $product->price) }}
-                                </div>
+                                <div class="col-2">小計</div>
+                                <div class="col-10">￥{{ number_format($product->qty * $product->price) }}</div>
                             </div>
-
                             <div class="row mb-2">
-                                <div class="col-2">
-                                    送料
-                                </div>
+                                <div class="col-2">送料</div>
                                 <div class="col-10">
                                     @if ($product->options->carriage)
                                         ￥800
@@ -102,25 +74,22 @@
                                     @endif
                                 </div>
                             </div>
-
                             <div class="row mb-2">
-                                <div class="col-2">
-                                    合計
-                                </div>
+                                <div class="col-2">合計</div>
                                 <div class="col-10">
-                                    @if ($product->options->carriage)
-                                        ￥{{ number_format(($product->qty * $product->price) + 800) }}
-                                    @else
-                                        ￥{{ number_format($product->qty * $product->price) }}
-                                    @endif
+                                    @php
+                                        $subtotal = $product->qty * $product->price;
+                                        $total = $subtotal + ($product->options->carriage ? 800 : 0);
+                                    @endphp
+                                    ￥{{ number_format($total) }}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
+
         </div>
     </div>
 </div>
-
 @endsection

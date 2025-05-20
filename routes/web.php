@@ -8,24 +8,18 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\FaqController;
+use App\Http\Controllers\FaqController; // ← 追加必要
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
 Route::get('/', [WebController::class, 'index'])->name('top');
 
 require __DIR__.'/auth.php';
-
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('products', ProductController::class);
@@ -45,8 +39,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('users/mypage/delete', 'destroy')->name('mypage.destroy');
         Route::get('users/mypage/cart_history', 'cart_history_index')->name('mypage.cart_history');
         Route::get('users/mypage/cart_history/{num}', 'cart_history_show')->name('mypage.cart_history_show');
-        Route::post('/favorites', [FavoriteController::class, 'store'])->name('favorites.store');
-        Route::get('/favorites', [FavoriteController::class, 'index'])->name('favorites.index');        
+
+        // 必要なルート（競合にあったもの）
+        Route::get('/favorites', [FavoriteController::class, 'index'])->name('favorites.index');
     });
 
     Route::controller(CartController::class)->group(function () {
@@ -62,4 +57,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
-Route::get('faqs',  [FaqController::class, 'index'])->name('faqs.index');
+// 公開用ルート
+Route::get('faqs',  [FaqController::class, 'index'])->name('faqs.index'); // ← 競合解決で残す

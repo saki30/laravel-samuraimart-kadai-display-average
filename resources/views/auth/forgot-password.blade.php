@@ -3,8 +3,8 @@
 @section('content')
 <div class="container pt-5">
     <div class="row justify-content-center">
-        <div class="col-md-4">
-            <h1 class="mb-3">パスワード再設定</h3>
+        <div class="col-md-5">
+            <h1 class="mb-3">パスワード再設定</h1>
 
             <p class="lh-lg">
                 ご登録時のメールアドレスを入力してください。<br>
@@ -18,7 +18,6 @@
                     {{ session('status') }}
                 </div>
             @endif
-
 
             <form method="POST" action="{{ route('password.email') }}">
                 @csrf
