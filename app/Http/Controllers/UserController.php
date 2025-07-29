@@ -107,4 +107,8 @@ class UserController extends Controller
 
         return view('users.cart_history_show', compact('cart_contents', 'cart_info'));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)

@@ -12,7 +12,11 @@ class TrustProxies extends Middleware
      *
      * @var array<int, string>|string|null
      */
+<<<<<<< HEAD
     protected $proxies = '*'; // すべてのプロキシを信頼
+=======
+    protected $proxies = '*';
+>>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
 
     /**
      * The headers that should be used to detect proxies.

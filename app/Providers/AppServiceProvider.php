@@ -6,6 +6,10 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
 
 class AppServiceProvider extends ServiceProvider
 {

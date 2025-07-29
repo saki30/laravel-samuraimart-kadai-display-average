@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('reviews', function (Blueprint $table) {
-            $table->string('title');
+            $table->string('title')->after('comment')->nullable(false);
         });
     }
 
