@@ -7,73 +7,47 @@ body {
   font-family: 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: 0.11px;
 }
 
-h1 {
-  font-size: 26px;
+h1, h2, h3 {
   font-weight: bold;
-<<<<<<< HEAD
-=======
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
+}
+
+h1 {
+  font-size: 26px;
   letter-spacing: -0.13px;
 }
 
 h2 {
   font-size: 22px;
-  font-weight: bold;
-<<<<<<< HEAD
-=======
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
 }
 
 h3 {
   font-size: 18px;
-  font-weight: bold;
-<<<<<<< HEAD
-  letter-spacing: 0.04px;
-=======
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 0.04px;
 }
 
 big {
   font-size: 16px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 0.08px;
 }
 
 caption {
   font-size: 12px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 0.08px;
 }
 
 label {
   font-size: 14px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #191919;
 }
 
@@ -86,10 +60,6 @@ label {
 .samuraimart-check-label {
   font-size: 12px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #000000;
 }
 
@@ -101,21 +71,15 @@ label {
 .samuraimart-require-input-label-text {
   font-size: 14px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #ffffff;
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
 }
 
 .samuraimart-submit-button {
   font-size: 14px;
   font-weight: bold;
-<<<<<<< HEAD
-  background-color: #0fbe9f !important;
   border-radius: 2px;
   color: #ffffff;
+  background-color: #0fbe9f !important;
   padding-top: 8px;
   padding-bottom: 8px;
   transition: 0.1s;
@@ -125,22 +89,9 @@ label {
   opacity: 0.8;
 }
 
-=======
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #ffffff;
-  background-color: #0fbe9f;
-}
-
 .samuraimart-login-text {
   font-size: 14px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #0fbe9f;
 }
 
@@ -157,7 +108,8 @@ label {
   background-color: #0fbe9f;
 }
 
-.samuraimart-header-search-icon {
+.samuraimart-header-search-icon,
+.samuraimart-header-shoppingcart-icon {
   color: #ffffff;
 }
 
@@ -165,22 +117,10 @@ label {
   color: #191919;
 }
 
-.samuraimart-header-shoppingcart-icon {
-  color: #ffffff;
-}
-
-
-/* 
-* 12章 お気に入り機能を追加しよう
-* https://terakoya.sejuku.net/programs/157/chapters/2086
-*/
-
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
 .samuraimart-favorite-button {
   border-radius: 2px;
   border: solid 1px #0fbe9f;
   background-color: #ffffff;
-<<<<<<< HEAD
   font-weight: bold;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -189,29 +129,17 @@ label {
 
 .samuraimart-favorite-button:hover {
   opacity: 0.8;
-=======
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
 }
 
 .text-favorite {
   color: #0fbe9f;
-<<<<<<< HEAD
-=======
 }
 
-/* 
-* 14章 検索機能とカテゴリの絞り込み機能を追加しよう
-* https://terakoya.sejuku.net/programs/157/chapters/2088
-*/
 .samuraimart-sidebar-category-label {
   width: 156px;
   height: 20px;
   font-size: 13px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #191919;
 }
 
@@ -221,10 +149,7 @@ label {
   background-color: #0fbe9f;
 }
 
-.review-score-color {
-  color: #0fbe9f;
-}
-
+.review-score-color,
 .review-score-color:focus {
   color: #0fbe9f;
 }
@@ -235,13 +160,20 @@ label {
   background-color: #d94b0e;
 }
 
-th,
-td {
+th, td {
   background-color: #f8fafc !important;
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
 }
 
-/* 追加された星評価機能 */
+/* 星評価機能 */
+.star-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1;
+  width: 5em;
+  height: 1em;
+}
+
 .star-rating .star {
   font-size: 20px;
   display: inline-block;
@@ -249,19 +181,6 @@ td {
 
 .star-rating .star.filled {
   color: #0fbe9f;
-}
-
-.star-rating {
-  position: relative;
-  display: inline-block;
-  font-size: 20px;
-  line-height: 1;
-<<<<<<< HEAD
-  width: 5em;
-=======
-  width: 5em;  /* 5つ分の星幅 */
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)
-  height: 1em;
 }
 
 .star-rating-back,
@@ -281,14 +200,7 @@ td {
 }
 
 .star-rating-front {
-<<<<<<< HEAD
   color: #0fbe9f;
   z-index: 2;
   pointer-events: none;
 }
-=======
-  color: #0fbe9f; /* 塗られる星（ゴールド） */
-  z-index: 2;
-  pointer-events: none;
-}
->>>>>>> 7c1dde9 (不要な.DS_Storeファイルを削除)

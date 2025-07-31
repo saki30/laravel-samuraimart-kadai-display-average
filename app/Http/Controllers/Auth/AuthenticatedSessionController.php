@@ -29,11 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-<<<<<<< HEAD
-        return redirect()->intended(RouteServiceProvider::HOME)->with('flash_message', 'ログインしました。');
-=======
-        return redirect()->intended(RouteServiceProvider::HOME);
->>>>>>> f3ae8c1 (new)
+        return redirect()->intended(RouteServiceProvider::HOME)
+                         ->with('flash_message', 'ログインしました。');
     }
 
     /**
@@ -44,13 +41,9 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
-<<<<<<< HEAD
-        return redirect('/')->with('flash_message', 'ログアウトしました。');
-=======
-        return redirect('/');
->>>>>>> f3ae8c1 (new)
+        return redirect('/')
+                ->with('flash_message', 'ログアウトしました。');
     }
 }
