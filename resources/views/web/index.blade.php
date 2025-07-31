@@ -70,7 +70,6 @@
 
             <div class="mb-4">
                 <h2>注目商品</h2>
-                <p>件数：{{ $featured_products->count() }}</p>
                 <div class="row">
                     @foreach ($featured_products as $featured_product)
                         <div class="col-3">
