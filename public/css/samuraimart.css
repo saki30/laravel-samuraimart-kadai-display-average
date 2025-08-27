@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  margin: 0;
 }
 
 body {
@@ -203,4 +204,13 @@ th, td {
   color: #0fbe9f;
   z-index: 2;
   pointer-events: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #fff;
+  text-align: center;
 }
