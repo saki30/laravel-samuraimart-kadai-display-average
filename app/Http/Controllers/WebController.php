@@ -19,7 +19,7 @@ class WebController extends Controller
         $recommend_products = Product::where('recommend_flag', true)->take(3)->get();
 
         $featured_products = Product::withAvg('reviews', 'score')
-            ->orderByDesc('reviews_avg_score')->orderByDesc('created_at') 
+            ->orderByDesc('created_at') 
             ->take(4)
             ->get();
 
