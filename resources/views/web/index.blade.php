@@ -25,9 +25,9 @@
                         <div class="col-4">
                             <a href="{{ route('products.show', $recommend_product) }}">
                                 @if ($recommend_product->image !== "")
-                                <img src="{{ asset($recommend_product->image) }}" class="img-thumbnail">
+                                    <img src="{{ asset('img/' . $recommend_product->image) }}" class="img-thumbnail">
                                 @else
-                                <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+                                    <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
                                 @endif
                             </a>
                             <div class="row">
@@ -49,8 +49,8 @@
                     @foreach ($recently_products as $recently_product)
                         <div class="col-3">
                             <a href="{{ route('products.show', $recently_product) }}">
-                                @if ($recently_product->image !== "")
-                                    <img src="{{ asset($recently_product->image) }}" class="img-thumbnail">
+                                @if ($recommend_product->image !== "")
+                                    <img src="{{ asset('img/' . $recommend_product->image) }}" class="img-thumbnail">
                                 @else
                                     <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
                                 @endif
@@ -74,8 +74,8 @@
                     @foreach ($featured_products as $featured_product)
                         <div class="col-3">
                             <a href="{{ route('products.show', $featured_product) }}">
-                                @if ($featured_product->image !== "")
-                                    <img src="{{ asset($featured_product->image) }}" class="img-thumbnail">
+                                @if ($recommend_product->image !== "")
+                                    <img src="{{ asset('img/' . $recommend_product->image) }}" class="img-thumbnail">
                                 @else
                                     <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
                                 @endif
