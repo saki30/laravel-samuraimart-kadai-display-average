@@ -49,10 +49,10 @@
                     @foreach ($recently_products as $recently_product)
                         <div class="col-3">
                             <a href="{{ route('products.show', $recently_product) }}">
-                                @if ($recommend_product->image !== "")
-                                    <img src="{{ asset('img/' . $recommend_product->image) }}" class="img-thumbnail">
+                                @if ($recently_product->image !== "")
+                                    <img src="{{ asset('img/' . $recently_product->image) }}" class="img-thumbnail">
                                 @else
-                                    <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+                                    <img src="{{ asset('img/dummy.png') }}" class="img-thumbnail">
                                 @endif
                             </a>
                             <div class="row">
@@ -74,10 +74,10 @@
                     @foreach ($featured_products as $featured_product)
                         <div class="col-3">
                             <a href="{{ route('products.show', $featured_product) }}">
-                                @if ($recommend_product->image !== "")
-                                    <img src="{{ asset('img/' . $recommend_product->image) }}" class="img-thumbnail">
+                                @if ($featured_product->image !== "")
+                                    <img src="{{ asset('img/' . $featured_product->image) }}" class="img-thumbnail">
                                 @else
-                                    <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+                                    <img src="{{ asset('img/dummy.png') }}" class="img-thumbnail">
                                 @endif
                             </a>
                             <div class="row">
