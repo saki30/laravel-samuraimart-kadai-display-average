@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "bumbummen99/shoppingcart": "^4.2",
         "encore/laravel-admin": "^1.8",
+        "fakerphp/faker": "^1.24",
         "goodby/csv": "=1.0",
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "^3.11",
@@ -18,7 +19,6 @@
         "stripe/stripe-php": "^17.2"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.24",
         "laravel/breeze": "*",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
