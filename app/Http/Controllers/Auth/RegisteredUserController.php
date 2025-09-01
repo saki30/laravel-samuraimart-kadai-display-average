@@ -52,6 +52,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/verify-email');
+        return redirect('/verify-email')
+        ->with('register_message', '会員登録ありがとうございます！メールをご確認ください。');
     }
 }

@@ -2,15 +2,12 @@
 
 @section('content')
 <div class="container pt-2">
-    @if (session('flash_message'))
-        <div class="row mb-2">
-            <div class="col-12">
-                <div class="alert alert-light">
-                    {{ session('flash_message') }}
-                </div>
-            </div>
+    @if (session('registered'))
+        <div class="alert alert-success">
+            会員登録ありがとうございます！
         </div>
     @endif
+
 
     <div class="row">
         <div class="col-md-2">
