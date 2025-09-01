@@ -15,10 +15,11 @@ class WebController extends Controller
         $major_categories = MajorCategory::all();
 
         $recently_products = Product::orderByDesc('created_at')->take(4)->get();
-        
+
         $recommend_products = Product::where('recommend_flag', true)->take(3)->get();
 
         $featured_products = Product::withAvg('reviews', 'score')
+            ->orderByDesc('reviews_avg_score')
             ->orderByDesc('created_at') 
             ->take(4)
             ->get();
