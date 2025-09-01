@@ -25,7 +25,7 @@ Route::get('/', [WebController::class, 'index'])->name('top');
 // 認証関連ルート（1回でOK）
 require __DIR__.'/auth.php';
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     // 商品関連
     Route::resource('products', ProductController::class);
 
