@@ -8,7 +8,15 @@
             <nav class="mb-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('top') }}">トップ</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('products.index', ['category' => $product->category->id]) }}">{{ $product->category->name }}</a></li>
+                    <li class="breadcrumb-item">
+                        @if ($product->category)
+                            <a href="{{ route('products.index', ['category' => $product->category->id]) }}">
+                                {{ $product->category->name }}
+                            </a>
+                        @else
+                            <span>カテゴリ未設定</span>
+                        @endif
+                    </li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
                 </ol>
             </nav>
